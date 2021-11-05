@@ -121,7 +121,7 @@ function reset() {
 
   //change colorDisplay to match picked color
   colorDisplay.textContent = pickedColor;
-  resetBtn.textContent = "New Colours";
+  resetBtn.textContent = "Change Colours";
   //change colors of squares
   for (var i = 0; i < squares.length; i++) {
     if (colors[i]) {
