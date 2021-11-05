@@ -40,13 +40,13 @@ function setUpSquares(){
 			var clickedColor = this.style.backgroundColor;
 			//compare color to pickedcolor
 	 		if (clickedColor === pickedColor) {
-				messageDisplay.textContent = "Correct";
+				messageDisplay.textContent = "CORRECT!";
 				resetBtn.textContent = "Play Again?";
 				changeColors(clickedColor);
 				h1.style.backgroundColor = clickedColor;
 			}else{
 				this.style.backgroundColor = "#232323";
-				messageDisplay.textContent = "Try Again";
+				messageDisplay.textContent = "WRONG! Try Again";
 			}
 		})
 	}
@@ -60,8 +60,8 @@ function reset(){
 	pickedColor = pickColor();
 	//change colorDisplay to match picked color
 	colorDisplay.textContent = pickedColor;	
-	resetBtn.textContent = "New Colours"
-	messageDisplay.textContent = "";
+	resetBtn.textContent = "Change Colours?"
+	messageDisplay.textContent = "LET'S GO!";
 	//change colors of squares
 	for (var i = 0; i < squares.length; i++){
 		if (colors[i]) {
