@@ -1,67 +1,159 @@
-body{
-	background: #232323;
-	margin: 0;
-	font-family: "Montserrat", "Avenir";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
 }
-#container{
-	margin: 20px auto;
-	max-width: 600px;
+
+body {
+  background: #222;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-.square{
-	width: 30%;
-	background: purple;
-	padding-bottom: 30%;
-	float: left;
-	margin: 1.66%;
-	border-radius: 40%;
-	transition: background 0.5s;
-	--webkit-transition: background 0.5s;
-	--moz-transition: background 0.5s;
+
+h1 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.2rem;
+  background: steelblue;
+  color: #fff;
+  margin: 0;
+  line-height: 1.1;
+  padding: 1.5rem 0;
 }
-#stripe{
-	background: #fff;
-	height: 50px;
-	text-align: center;
+
+a {
+  color: #fff;
+  text-decoration: none;
 }
-h1{
-	text-align: center;
-	font-weight: normal;
-	background: steelblue;
-	color: #fff;
-	margin: 0;
-	line-height: 1.1;
-	padding: 20px 0;
+
+.selected {
+  color: #fff;
+  background: steelblue;
 }
-a{
-	color: #fff;
-	text-decoration: none;
+
+#colorDisplay {
+  font-size: 2.1rem;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 2px;
 }
-#message{
-	display: inline-block;
-	width: 20%;
+
+.square-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 35rem;
+  margin: 0 auto;
 }
-.selected{
-	color: #fff;
-	background: steelblue;
+
+.square {
+  position: relative;
+  width: 100%;
+  height: 7rem;
+  border-radius: 2rem;
+  transition: background 0.5s;
+  --webkit-transition: background 0.5s;
+  --moz-transition: background 0.5s;
+  cursor: pointer;
 }
-#colorDisplay{
-	font-size: 200%;
+
+.square svg {
+  position: absolute;
+  width: 3.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-button{
-	border:none;
-	background: none;
-	text-transform: uppercase;
-	height: 100%;
-	font-weight: 700;
-	color: steelblue;
-	letter-spacing: 1px;
-	font-size: inherit;
-	transition: all 0.5s;
-	--webkit-transition: all 0.5s;
-	--moz-transition: all 0.5s;
-	outline: none;
+
+.square svg path {
+  fill: #eef;
 }
-button:hover{
-	color: #fff;
-	background: steelblue;
+
+#stripe {
+  background: #ddd;
+  height: 2.7rem;
+  text-align: center;
+}
+
+button {
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  height: 100%;
+  font-weight: 700;
+  padding: 0.7rem;
+  color: steelblue;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  transition: all 0.5s;
+  --webkit-transition: all 0.5s;
+  --moz-transition: all 0.5s;
+  outline: none;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #fff;
+  background: steelblue;
+}
+
+.mode:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.reset {
+  display: block;
+  margin: 3rem auto 0 auto;
+  background-color: #eee;
+  color: steelblue;
+  padding: 1rem 1.4rem;
+  border-radius: 0.7rem;
+}
+
+@media screen and (max-width: 37.5rem) {
+  h1 {
+    font-size: 1.85rem;
+    line-height: 1.5;
+  }
+
+  #stripe {
+    height: 2.9rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+  }
+
+  #colorDisplay {
+    font-size: 1.75rem;
+  }
+
+  .square-container {
+    width: 25rem;
+  }
+
+  .square svg {
+    width: 2.7rem;
+  }
+
+  .reset {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 26.875rem) {
+  .square-container {
+    gap: 0.7rem;
+    width: 20rem;
+  }
+
+  .square {
+    height: 6rem;
+  }
+
+  .square svg {
+    width: 2.5rem;
+  }
 }
