@@ -32,7 +32,12 @@ a {
   color: #fff;
   background: steelblue;
 }
-
+#guess {
+  font-size: 1.6rem;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 2px;
+}
 #colorDisplay {
   font-size: 2.1rem;
   text-align: center;
