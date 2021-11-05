@@ -1,32 +1,50 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Colour Guessing Game</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<h1>GUESS THE COLOUR!
-	<br>
-	<span id="colorDisplay">RGB</span> 
-	<br>
-	Developed By <a href="https://github.com/Seguncodes" target="_blank" rel="noopener noreferral">SegunCodes</a>
-	</h1>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="./style.css" />
+    <title>Color Guessing Game</title>
+  </head>
+  <body>
+    <h1>
+      The Fun <br />
+      Colour Game By
+      <a
+        href="https://github.com/Seguncodes"
+        target="_blank"
+        rel="noopener noreferral"
+      >
+        SegunCodes
+      </a>
+    </h1>
 
-	<div id="stripe">
-		<button id="reset">New Colors</button>
-		<span id="message"></span>
-		<button class="mode">Easy</button>
-		<button class="selected mode">Hard</button>
-	</div>
+    <div id="stripe">
+      <button class="mode">Easy</button>
+      <button class="selected mode">Hard</button>
+    </div>
 
-	<div id="container">
-		<div class="square"></div>
-		<div class="square"></div>
-		<div class="square"></div>
-		<div class="square"></div>
-		<div class="square"></div>
-		<div class="square"></div>
-	</div>
-	<script type="text/javascript" src="script.js"></script>
-</body>
+    <div class="game-wrapper">
+      <h2 id="colorDisplay"></h2>
+
+      <div class="square-container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+
+      <button class="reset">New Colors</button>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>
