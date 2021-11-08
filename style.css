@@ -92,14 +92,14 @@ button {
   color: steelblue;
   letter-spacing: 1px;
   font-size: 1.2rem;
-  transition: all 0.5s;
+  transition: all ease-in-out 0.5s;
   --webkit-transition: all 0.5s;
   --moz-transition: all 0.5s;
   outline: none;
   cursor: pointer;
 }
 
-button:hover {
+button:active {
   color: #fff;
   background: steelblue;
 }
@@ -161,4 +161,8 @@ button:hover {
   .square svg {
     width: 2.5rem;
   }
+}
+
+audio{
+  display: none;
 }
