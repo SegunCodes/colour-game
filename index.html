@@ -55,8 +55,12 @@
     /> -->
     <script type="text/javascript" src="script.js"></script>
     <script>
-      let appTheme = new Audio ("./audio/Cruisin'.mp3");
-      appTheme.play(0);
+      let sound = new Audio("./audio/Cruisin'.mp3");
+      if(confirm("Continue with audio?")){
+        sound.play(5000);
+      } else{
+        alert('You have disabled app audio.')
+      }
     </script>
   </body>
 </html>
