@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Color Guessing Game</title>
   </head>
-  <body>
+  <body id="body">
     <h1>
       The Fun <br />
       Colour Guessing Game By
@@ -48,11 +48,15 @@
 
       <button class="reset">New Colors</button>
     </div>
-    <audio
+    <!-- <audio
     autoplay
     src="./audio/Cruisin'.mp3"
     loop
-    />
+    /> -->
     <script type="text/javascript" src="script.js"></script>
+    <script>
+      let appTheme = new Audio ("./audio/Cruisin'.mp3");
+      appTheme.play(0);
+    </script>
   </body>
 </html>
