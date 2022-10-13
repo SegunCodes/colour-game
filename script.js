@@ -1,18 +1,22 @@
 var numOfSquares = 6;
 var colors = [];
 var pickedColor;
+let playHexMode;
 
 var squares = document.querySelectorAll(".square");
 var colorDisplay = document.getElementById("colorDisplay");
 var h1 = document.querySelector("h1");
 var resetBtn = document.querySelector(".reset");
 var modeBtn = document.querySelectorAll(".mode");
+let playModeSwitch = document.querySelectorAll(".play-mode");
+let playModeText = document.getElementById("play-mode-text");
 
 let num = 0;
 
 function init() {
   //mode buttons
   setUpModeButtons();
+  setPlayMode();
   setUpSquares();
   reset();
 }
@@ -30,6 +34,26 @@ function setUpModeButtons() {
   }
 }
 
+// switch play mode
+function setPlayMode() {
+  for (var i = 0; i < playModeSwitch.length; i++) {
+    playModeSwitch[i].addEventListener("click", function () {
+      playModeSwitch[0].classList.remove("selected-mode");
+      playModeSwitch[1].classList.remove("selected-mode");
+      this.classList.add("selected-mode");
+
+      if (this.textContent === "HEX") {
+        playHexMode = true;
+        playModeText.textContent = "HEX";
+      } else {
+        playHexMode = false;
+        playModeText.textContent = "RGB";
+      }
+      reset();
+    });
+  }
+}
+
 function setUpSquares() {
   for (var i = 0; i < squares.length; i++) {
     //add click listeners to squares
@@ -40,7 +64,10 @@ function setUpSquares() {
         }
         num = 1;
         squares.forEach((color) => {
-          let answer = color.style.backgroundColor;
+          let answer = playHexMode
+            ? convertRgbString(color.style.backgroundColor)
+            : color.style.backgroundColor;
+
           if (answer == pickedColor) {
             color.innerHTML = `<svg
                 aria-hidden="true"
@@ -67,7 +94,9 @@ function setUpSquares() {
         resetBtn.textContent = "Play Again?";
 
         //grab color of clicked square
-        var clickedColor = e.target.style.backgroundColor;
+        var clickedColor = playHexMode
+          ? convertRgbString(e.target.style.backgroundColor)
+          : e.target.style.backgroundColor;
 
         //compare color to picked color
         if (clickedColor === pickedColor) {
@@ -126,7 +155,12 @@ function reset() {
   for (var i = 0; i < squares.length; i++) {
     if (colors[i]) {
       squares[i].style.display = "block";
-      squares[i].style.backgroundColor = colors[i];
+      // set square background color based on play mode
+      playHexMode
+        ? (squares[i].attributes[
+            "style"
+          ].textContent = `background-color:${colors[i]}`)
+        : (squares[i].style.backgroundColor = colors[i]);
       squares[i].innerHTML = "";
     } else {
       squares[i].style.display = "none";
@@ -169,5 +203,30 @@ function randomColor() {
   //pick a green from 0-255
   var b = Math.floor(Math.random() * 256);
   // "rgb(r, g, b)"
-  return "rgb(" + r + ", " + g + ", " + b + ")";
+
+  // return color format based on play mode
+  return playHexMode
+    ? convertRgbToHex(r, g, b)
+    : "rgb(" + r + ", " + g + ", " + b + ")";
+}
+
+function hexValue(x) {
+  var hex = x.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function convertRgbToHex(r, g, b) {
+  return `#${hexValue(r)}${hexValue(g)}${hexValue(b)}`;
+}
+
+function convertRgbString(clickedColor) {
+  const splitted = clickedColor
+    ?.replace("rgb(", "")
+    .replace(")", "")
+    .split(",");
+  const r = parseInt(splitted[0], 10);
+  const g = parseInt(splitted[1], 10);
+  const b = parseInt(splitted[2], 10);
+
+  return convertRgbToHex(r, g, b);
 }
