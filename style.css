@@ -117,6 +117,35 @@ button:active {
   border-radius: 0.7rem;
 }
 
+.play-mode-wrapper {
+  margin: 0 auto;
+  background-color: #ddd;
+  width: fit-content;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.play-modes {
+  display: flex;
+  gap: 5px;
+  padding: 0;
+  margin: 0;
+}
+
+.play-modes .play-mode {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.play-modes .selected-mode {
+  border-radius: 10px;
+  border: 2px solid steelblue;
+  background-color: #fff;
+}
+
 @media screen and (max-width: 37.5rem) {
   h1 {
     font-size: 1.85rem;

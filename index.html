@@ -1,55 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A simple colour guessing game for designers. Read the RGB code and guess the color! Have fun!😁">
-    <!-- <link
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="A simple colour guessing game for designers. Read the RGB code and guess the color! Have fun!😁">
+  <!-- <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     /> -->
-    <link rel="shortcut icon" href="./icon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./style.css" />
-    <title>Color Guessing Game</title>
-  </head>
-  <body id="body">
-    <h1>
-      The Fun <br />
-      Colour Guessing Game By
-      <a
-        href="https://github.com/Seguncodes"
-        target="_blank"
-        rel="noopener noreferral"
-      >
-        SegunCodes
-      </a>
-    </h1>
+  <link rel="shortcut icon" href="./icon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css" />
+  <title>Color Guessing Game</title>
+</head>
 
-    <div id="stripe">
-      <button class="mode">Easy</button>
-      <button class="selected mode">Hard</button>
+<body id="body">
+  <h1>
+    The Fun <br />
+    Colour Guessing Game By
+    <a href="https://github.com/Seguncodes" target="_blank" rel="noopener noreferral">
+      SegunCodes
+    </a>
+  </h1>
+
+  <div id="stripe">
+    <button class="mode">Easy</button>
+    <button class="selected mode">Hard</button>
+  </div>
+
+  <div class="game-wrapper">
+    <div class="play-mode-wrapper">
+      <ul class="play-modes">
+        <li class="play-mode selected-mode">RGB</li>
+        <li class="play-mode">HEX</li>
+      </ul>
     </div>
 
-    <div class="game-wrapper">
-       <h5 id="guess">Hint : You are required to guess the Colour of the RGB value below.</h5>
-       <h2 id="colorDisplay"></h2>
+    <h5 id="guess">Hint : You are required to guess the Colour of the <span id="play-mode-text">RGB</span> value below.
+    </h5>
+    <h2 id="colorDisplay"></h2>
 
-      <div class="square-container">
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-      </div>
-
-      <button class="reset">New Colors</button>
+    <div class="square-container">
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
     </div>
-    
-    <script type="text/javascript" src="script.js"></script>
-    
-  </body>
+
+    <button class="reset">New Colors</button>
+  </div>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+
 </html>
