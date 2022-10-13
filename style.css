@@ -144,6 +144,7 @@ button:active {
   border-radius: 10px;
   border: 2px solid steelblue;
   background-color: #fff;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 37.5rem) {
